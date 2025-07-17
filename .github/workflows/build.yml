@@ -23,6 +23,10 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
     steps:
+    - uses: gerlero/apt-install@v1
+      if: startsWith(matrix.os, 'ubuntu') == true
+      with:
+        packages: libhwy-dev liblcms2-dev libjpeg-turbo8-dev libpng-dev libjpeg-dev zlib1g-dev libgif-dev
     - uses: actions/checkout@v4
     - uses: actions/setup-dotnet@v4
       with:
