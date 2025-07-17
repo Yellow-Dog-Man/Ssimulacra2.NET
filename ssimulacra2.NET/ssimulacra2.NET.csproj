@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<!-- NuGet Meta-data -->
+	<PropertyGroup>
+		<Company>Yellow Dog Man Studios</Company>
+		<Authors>Yellow Dog Man Studios</Authors>
+		<PackageId>YellowDogMan.ssimulacra2.NET</PackageId>
+		<Description>.NET wrapper for the ssimulacra2 algorithm by Jon Sneyers (Cloudinary), using P/Invoke</Description>
+		<Copyright>Copyright (c) Yellow Dog Man Studios s.r.o.</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageIcon>icon.png</PackageIcon>
+		<RepositoryUrl>https://github.com/Yellow-Dog-Man/Compressonator.NET</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageProjectURL>https://yellowdogman.com/</PackageProjectURL>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageTags>ssim ssim2 ssimulacra2 ssimulacra</PackageTags>
+		<PackageReleaseNotes>Initial release</PackageReleaseNotes>
+	</PropertyGroup>
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\Images\icon.png" Pack="true" PackagePath="\" />
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+    <!-- WINDOWS -->
+    <ItemGroup>
+    <ContentWithTargetPath Include="Native\win-x64\*.dll">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+        <TargetPath>%(Filename)%(Extension)</TargetPath>
+    </ContentWithTargetPath>
+    </ItemGroup>
+
+    <ItemGroup>
+    <None Include="Native\win-x64\*.dll" Pack="True" PackagePath="runtimes\win-x64\native\"></None>
+    </ItemGroup>
+
+    <!-- LINUX -->
+    <ItemGroup>
+    <ContentWithTargetPath Include="Native\linux-x64\*.so">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+        <TargetPath>%(Filename)%(Extension)</TargetPath>
+    </ContentWithTargetPath>
+    </ItemGroup>
+
+    <ItemGroup>
+    <None Include="Native\linux-x64\*.so" Pack="True" PackagePath="runtimes\linux-x64\native\"></None>
+    </ItemGroup>
+
+</Project>
