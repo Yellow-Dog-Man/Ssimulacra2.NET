@@ -23,5 +23,19 @@
 
             Assert.IsLessThan(0, score, "Different images must have negative scores");
         }
+
+        [DataRow(Ssimulacra2Quality.ExtremelyLow, "apples.png", "apples_flipped.png")]
+        [DataRow(Ssimulacra2Quality.ExtremelyLow, "apples.png", "apples_shifted.png")]
+        [DataRow(Ssimulacra2Quality.Medium, "apples.png", "apples_quality.png")]
+        [TestMethod]
+        public void Test2Paths(Ssimulacra2Quality expectedQuality, string fileA, string fileB)
+        {
+            var bytes = SnapshotUtilities.Load(fileA);
+            var bytes2 = SnapshotUtilities.Load(fileB);
+            var score = Ssimulacra2.ComputeFromMemory(bytes, bytes2);
+
+            Assert.AreEqual(expectedQuality, Ssimulacra2QualityConversion.FromScore(score));
+        }
+        
     }
 }

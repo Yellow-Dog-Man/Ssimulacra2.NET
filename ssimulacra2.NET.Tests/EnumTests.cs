@@ -19,7 +19,7 @@ public class EnumTests
     [TestMethod]
     public void TestEnumConversion(double score, Ssimulacra2Quality expectedQuality)
     {
-        Assert.AreEqual(expectedQuality, Sssimulacra2QualityConversion.FromScore(score));
+        Assert.AreEqual(expectedQuality, Ssimulacra2QualityConversion.FromScore(score));
     }
 }
 
