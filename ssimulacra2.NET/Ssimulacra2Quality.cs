@@ -12,7 +12,7 @@ public enum Ssimulacra2Quality : int
     VisuallyLossless = 90,
     Lossless = 100
 }
-public static class Sssimulacra2QualityConversion
+public static class Ssimulacra2QualityConversion
 {
     public static Ssimulacra2Quality FromScore(double score)
     {
