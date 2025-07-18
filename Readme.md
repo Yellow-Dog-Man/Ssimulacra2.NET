@@ -1,5 +1,10 @@
 # Ssimulacra2.NET
 
+[![Nuget downloads](https://img.shields.io/nuget/v/YellowDogMan.ssimulacra2.NET.svg)](https://www.nuget.org/packages/YellowDogMan.ssimulacra2.NET)
+[![Nuget](https://img.shields.io/nuget/dt/YellowDogMan.ssimulacra2.NET)](https://www.nuget.org/packages/YellowDogMan.ssimulacra2.NET)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Yellow-Dog-Man/ssimulacra2.NET/build.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](/LICENSE.txt)
+
 A .NET C# Wrapper for [our fork](https://github.com/Yellow-Dog-Man/ssimulacra2) of the [Ssimulacra2](https://github.com/cloudinary/ssimulacra2) tool by Jon Sneyers (Cloudinary).
 
 # Requirements
